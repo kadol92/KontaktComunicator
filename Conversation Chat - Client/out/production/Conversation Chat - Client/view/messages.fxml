@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="messages" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MessagesController">
+   <children>
+      <GridPane fx:id="infoGridPane" maxHeight="165.0" minHeight="50.0" prefHeight="50.0" prefWidth="550.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="206.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="340.0" minWidth="340.0" prefWidth="340.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="TOP" vgrow="ALWAYS" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="userNameLabel" text="Nazwa użytkownika">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </GridPane.margin>
+            </Label>
+            <TitledPane fx:id="optionsPane" animated="false" expanded="false" minHeight="150.0" onMouseClicked="#expandinfoGridPane" prefHeight="150.0" prefWidth="320.0" text="Opcje konwersacji" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+               </GridPane.margin>
+               <content>
+                  <GridPane prefHeight="107.0" prefWidth="318.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="135.0" minWidth="10.0" prefWidth="104.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.0" minWidth="10.0" prefWidth="176.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="14.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="Przychodzące" GridPane.rowIndex="1" />
+                        <CheckBox mnemonicParsing="false" text="Wychodzące" GridPane.rowIndex="2" />
+                        <Label text="Tłumacz:" />
+                        <Label text="Wybierz języki" GridPane.columnIndex="1">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </Label>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <ChoiceBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </ChoiceBox>
+                        <Button fx:id="editContact" mnemonicParsing="false" onMouseClicked="#showEditContactPanel" text="Edytuj kontakt" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </content>
+            </TitledPane>
+         </children>
+      </GridPane>
+      <TextArea fx:id="messageBox" editable="false" maxHeight="1.7976931348623157E308" onMouseClicked="#expandinfoGridPane" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+         </VBox.margin>
+      </TextArea>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.0" minWidth="10.0" prefWidth="148.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="402.0" minWidth="10.0" prefWidth="402.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Napisz wiadomość">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <Label fx:id="messageTextAreaInfo" prefHeight="17.0" prefWidth="286.0" text="Nie można wysłać wiadomości (Niezalogowany)" textFill="RED" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <TextArea fx:id="messageTextArea" maxHeight="100.0" minWidth="100.0" onKeyReleased="#sendMessage" prefHeight="100.0" prefWidth="200.0" promptText="Treść wiadomości...">
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </TextArea>
+   </children>
+</VBox>

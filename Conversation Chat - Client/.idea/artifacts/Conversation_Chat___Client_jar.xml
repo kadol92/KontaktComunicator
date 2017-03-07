@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Conversation Chat - Client:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Conversation_Chat___Client_jar</output-path>
+    <root id="archive" name="Conversation Chat - Client.jar">
+      <element id="module-output" name="Conversation Chat - Client" />
+      <element id="extracted-dir" path="$USER_HOME$/Desktop/translate/google-api-services-translate-v2-rev48-1.22.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../JavaLib/mysql-connector/mysql-connector-java-5.1.40-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

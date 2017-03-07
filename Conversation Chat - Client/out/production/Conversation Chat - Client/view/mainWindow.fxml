@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="mainPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="700.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Ustawienia">
+                    <items>
+                        <MenuItem fx:id="loginMenu" mnemonicParsing="false" onAction="#showLoginWindow" text="Zaloguj" />
+                        <MenuItem mnemonicParsing="false" onAction="#showRegisterWindow" text="Rejestracja" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Kontakty">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showSearchPanel" text="Katalog kontaktów" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <GridPane VBox.vgrow="ALWAYS">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="200.0" prefWidth="250.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" valignment="TOP" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <ListView fx:id="listViewContacts" onMouseClicked="#displayContactsWindow" prefHeight="200.0" prefWidth="200.0">
+                    <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                    </GridPane.margin>
+                </ListView>
+                <fx:include fx:id="messages" source="messages.fxml" visible="false" GridPane.columnIndex="1" />
+                <fx:include fx:id="login" source="login.fxml" visible="false" GridPane.columnIndex="1" />
+                <fx:include fx:id="editContact" source="editContact.fxml" visible="false" GridPane.columnIndex="1" />
+                <fx:include fx:id="searchContact" source="SearchContact.fxml" visible="false" GridPane.columnIndex="1" />
+
+
+
+            </children>
+        </GridPane>
+    </children>
+</VBox>
