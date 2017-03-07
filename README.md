@@ -4,7 +4,7 @@ Kontat Comunicator
 Student's project for "Programowanie sieciowe"
 
 ### Description:
-A simple muli client chat write in JavaFX. 
+A simple muli client chat written in JavaFX. 
 This repository contains programs for client and server. 
 
 ### Features
